@@ -1,0 +1,21 @@
+[package]
+name = "rust-programming"
+version = "0.1.0"
+edition = "2021"
+authors = ["Rakibul Islam"]
+description = "A learning journey through Rust programming language"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# Common dependencies that we'll use in later sections
+serde = { version = "1.0", features = ["derive"] }  # For serialization/deserialization
+serde_json = "1.0"  # JSON support
+tokio = { version = "1.0", features = ["full"] }  # Async runtime
+reqwest = { version = "0.11", features = ["json"] }  # HTTP client
+rand = "0.8"  # Random number generation
+
+# Dependencies are commented out by default and can be uncommented when needed
+# actix-web = "4.0"  # Web framework
+# sqlx = { version = "0.6", features = ["runtime-tokio-native-tls", "postgres"] }  # Database
+# clap = { version = "4.0", features = ["derive"] }  # Command line argument parsing
