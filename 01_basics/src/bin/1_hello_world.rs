@@ -20,5 +20,5 @@ fn main() {
     println!("3. Print some calculations with different operators");
     
     println!("\nTry other examples:");
-    println!("cargo run --bin variables");
+    println!("cargo run --bin 2_variables_and_types");
 } 

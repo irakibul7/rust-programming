@@ -160,6 +160,7 @@ The example below declares a variable named `language` and binds it to the value
 fn main() {
     let language = "Rust";
     println!("{}", language); // Rust
+}
 ```
 
 ## Make a Variable Mutable
@@ -242,3 +243,88 @@ fn main() {
     println!("{}", outer); // 12
 }
 ```
+
+# Data Types
+
+Rust is a statically typed language, which means that the type of a variable is known at compile time.
+
+We can define a variable in two ways in Rust:
+
+## Implicit Type
+
+The compiler infers the type of the variable based on the value assigned to it.
+
+```rust
+let x = 5; // x is of type i32
+```
+
+## Explicit Type
+
+The programmer specifies the type of the variable.
+
+```rust
+let x: i32 = 5; // x is of type i32
+```
+
+# Primitive Data Types
+
+The following tree shows the different primitive data types in Rust.
+
+                        Primitive Data Types
+                               |
+                 +-------------+-------------+
+                 |                          |
+              Scalar                    Compound
+                 |                          |
+        +--------+--------+          +------+------+
+        |               |           |             |
+     Numeric      Non-Numeric     Array        Tuple
+        |               |
+   +----+----+    +-----+-------+
+   |         |    |             |
+Integer   Float  Boolean    Character
+
+# Scalar Type
+
+They store a single value.
+
+Below is the list of scalar types:
+
+## Integer
+- Example: 54, -98
+- Stores whole numbers
+- Can be signed (i8, i16, i32, i64, i128) or unsigned (u8, u16, u32, u64, u128)
+- Default is i32
+
+## Float
+- Example: 54.6, -98.8
+- Stores decimal numbers
+- Types: f32 (single precision) and f64 (double precision)
+- Default is f64
+
+## Boolean
+- Example: true, false
+- Stores true or false values
+- One byte in size
+
+## Character (char)
+- Example: 'a', 'A', '😀'
+- Stores a single Unicode character
+- Uses single quotes
+- Four bytes in size
+
+# Compound Type
+
+They group multiple values into one variable. Below is the list of compound types:
+
+## Array
+- Example: [1️⃣, 2️⃣, 3️⃣, 4️⃣, 5️⃣, 6️⃣]
+- Fixed length collection of same type elements
+- Type notation: [T; N] where T is type and N is length
+- Zero-based indexing
+
+## Tuple
+- Example: ("Hi", 2, 'a', 6, 5, 6)
+- Fixed length collection of different type elements
+- Type notation: (T1, T2, ...) where T1, T2 are types
+- Zero-based indexing
