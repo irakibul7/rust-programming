@@ -138,3 +138,107 @@ Doc comments are used to add documentation to the code. They are used to describ
 /// This is a doc comment.
 ```
 
+# Variables
+
+Variables are used to store values. By default, variables are immutable.
+
+## Binding
+
+Rust uses the `let` keyword to bind a value to a variable.
+
+## Naming Conventions
+
+- Variable names must start with a lowercase letter.
+- Variable names can contain letters, numbers, and underscores.
+- Variable names are case-sensitive.
+
+## Initialize a Variable
+
+The example below declares a variable named `language` and binds it to the value `"Rust"`.
+
+```rust
+fn main() {
+    let language = "Rust";
+    println!("{}", language); // Rust
+```
+
+## Make a Variable Mutable
+
+To make a variable mutable, we use the `mut` keyword.
+
+```rust
+fn main() {
+    let mut language = "Rust";
+    language = "Python";
+    println!("{}", language); // Python
+}
+```
+
+## Assigning Multiple Variables
+
+It is possible to assign multiple variables in a single statement.
+
+```rust
+let (x, y) = (1, 2);
+println!("x: {}, y: {}", x, y); // x: 1, y: 2
+```
+
+# Scope and Shadowing
+
+Scope is the region of the code where a variable is valid. Shadowing is a feature that allows a variable to be reassigned a new value.
+
+## Scope
+
+The scope of a variable refers to the region of the code where a program can access the variable.
+
+There are two types of variables:
+
+- Local variables:
+
+A variable that is within a block of code, `{}` that cannot be accessed outside of the block is a local variable.
+After the closing brace `}` of the block, the variable is freed and memory for the variable is deallocated.
+
+- Global variables:
+
+A variable that is declared outside of a block of code is a global variable.
+Global variables are valid for the entire program and are not freed until the program terminates.
+
+```rust
+fn main() {
+    let outer_var = "Outer Variable";
+    {
+        let inner_var = "Inner Variable";
+        println!("{}", inner_var);
+        println!("{}", outer_var);
+    }
+    println!("{}", inner_var); // use of inner_var outside of the block
+}
+```
+
+```error
+error[E0425]: cannot find value `inner_var` in this scope
+ --> main.rs:8:36
+  |
+8 |     println!("inner variable: {}", inner_var); // use of inner_var outside scope
+  |                                    ^^^^^^^^^^^^^^ help: a local variable with a similar name exists: `outer_variable`
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0425`.
+```
+
+## Shadowing
+
+Shadowing is a technique that allows a variable declared within a certain scope has the same name as a variable declared in an outer scope. This is also known as masking.
+
+```rust
+fn main() {
+    let outer = 12;
+    {
+        let inner = 13;
+        let outer = 14;
+        println!("{}", outer); // 14
+    }
+    println!("{}", outer); // 12
+}
+```
