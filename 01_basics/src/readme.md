@@ -343,3 +343,236 @@ Types that group multiple values:
 
 - Fixed-length collection of different-type elements
 - Type notation: `(T1, T2, ...)` where T1, T2 are types
+
+## Operators
+
+Operators are used to perform operations on variables and values.
+
+### Types of Operators
+
+Based on the number of operands, operators are classified into the following types:
+
+- Unary Operators: Operators that operate on a single operand.
+- Binary Operators: Operators that operate on two operands.
+- Ternary Operators: Operators that operate on three operands.
+
+### Unary Operators
+
+Unary operators are operators that operate on a single operand.
+
+- Negation Operator	
+- Logical Negation Operator
+- Borrowing Operator
+- Dereference Operator
+
+#### 1. Negation Operator
+
+The negation operator is used to negate the value of a variable.
+
+```rust
+let x = 5;
+let y = -x; // y is -5
+```
+
+#### 2. Logical Negation Operator
+
+The logical negation operator is used to negate the value of a variable.
+
+```rust
+let x = true;
+let y = !x; // y is false
+```
+
+#### 3. Borrowing Operator
+
+The borrowing operator is used to borrow a variable.
+
+Borrowing can be two types:
+
+- Shared Borrowing: `&`
+- Mutable Borrowing: `&mut`
+
+Example: 
+
+```rust
+let a = 10;
+let b = &a; // Shared Borrowing
+let c = &mut a; // Mutable Borrowing
+```
+
+#### 4. Dereference Operator
+
+The dereference operator is used to access the value of a variable.
+
+```rust
+let x = 5;
+let y = *x; // y is 5
+```
+
+### Binary Operators
+
+Binary operators are operators that operate on two operands.
+
+- Arithmetic Operators
+- Assignment Operators
+- Comparison Operators
+- Logical Operators
+- Bitwise Operators
+- Compound Assignment Operators
+- Type Casting Operators
+- Borrowing Operator
+#### 1. Arithmetic Operators
+
+The arithmetic operators are used to perform arithmetic operations on variables and values.
+
+```rust
+let x = 5;
+let y = 10;
+let z = x + y; // z is 15
+```
+
+#### 2. Assignment Operators
+
+The assignment operators are used to assign a value to a variable.
+
+```rust
+let x = 5;
+let y = 10;
+let z = x + y; // z is 15
+```
+
+#### 3. Comparison Operators
+
+The comparison operators are used to compare two variables and values.
+
+```rust
+let x = 5;
+let y = 10;
+let z = x == y; // z is false
+```								
+
+#### 4. Logical Operators
+
+The logical operators are used to perform logical operations on variables and values.
+
+```rust
+let x = true;
+let y = false;
+let z = x && y; // z is false
+```
+
+#### 5. Bitwise Operators
+
+The bitwise operators are used to perform bitwise operations on variables and values.
+
+```rust
+let x = 5;
+let y = 10;
+let z = x & y; // z is 0
+```
+
+#### 6. Compound Assignment Operators
+
+The compound assignment operators are used to perform compound assignment operations on variables and values.
+
+```rust
+let x = 5;
+let y = 10;
+let z = x + y; // z is 15
+```
+
+#### 7. Type Casting Operators
+
+The type casting operators are used to cast a variable to a different type.
+
+```rust
+let x = 5;
+let y = 10;
+let z = x as i32; // z is 5
+```
+
+/*
+📝What data types can be type casted?
+
+- Integer can be type casted to floating-point and vice versa:
+  let x: i32 = 5;
+  let y: f64 = x as f64;  // Integer to float
+  let z: i32 = y as i32;  // Float to integer
+
+- Integer can be typecasted to String:
+  let x: i32 = 5;
+  let y: String = x.to_string();
+
+📝What data types cannot be type casted?
+
+- String (&str) or character cannot be type casted to integer or float:
+  let s = "123";
+  let x = s as i32;  // ❌ This will not work
+  
+- Character cannot be type casted to String and vice versa:
+  let c = 'A';
+  let s = c as String;  // ❌ This will not work
+  let s = "Hello";
+  let c = s as char;    // ❌ This will not work
+*/
+
+#### 8. Borrowing Operator
+
+The borrowing operator in Rust allows one variable to reference the value of another variable without taking ownership. This creates a borrowing relationship where the referencing variable points to the memory location of the referenced variable.
+
+There are two types of borrowing in Rust:
+
+1. Shared Borrowing (`&`)
+- Allows multiple variables to reference the same data
+- The referenced data cannot be modified
+- References are copied rather than moved
+- Example: `let a = &x;`
+
+2. Mutable Borrowing (`&mut`) 
+- Allows a single variable to reference and modify the data
+- Only one mutable reference can exist at a time
+- The data is inaccessible to other variables while mutably borrowed
+- References are moved rather than copied
+- Example: `let b = &mut y;`
+
+## Precedence and Associativity
+
+Precedence and associativity are the rules that determine the order of operations in an expression.
+
+- Precedence: The order of operations in an expression.
+- Associativity: The direction of operations in an expression.
+
+### Precedence
+
+The precedence of an operator determines the order of operations in an expression.
+
+Operator are listed in the table below from highest to lowest precedence.
+
+| Precedence Level | Operators | Description |
+|-----------------|-----------|-------------|
+| 1 | `()`, `[]`, `.`, `?.` | Grouping, array/member access |
+| 2 | `!`, `-`, `*` (deref), `&`, `&mut` | Unary operators, dereference, borrowing |
+| 3 | `*`, `/`, `%` | Multiplication, division, remainder |
+| 4 | `+`, `-` | Addition, subtraction |
+| 5 | `<<`, `>>` | Bitwise shifts |
+| 6 | `&` | Bitwise AND |
+| 7 | `^` | Bitwise XOR |
+| 8 | `\|` | Bitwise OR |
+| 9 | `==`, `!=`, `<`, `>`, `<=`, `>=` | Comparisons |
+| 10 | `&&` | Logical AND |
+| 11 | `\|\|` | Logical OR |
+| 12 | `=`, `+=`, `-=`, `*=`, `/=`, `%=`, `&=`, `\|=`, `^=`, `<<=`, `>>=` | Assignment and compound assignment |
+
+### Associativity
+
+The associativity of an operator determines the direction of operations in an expression.
+
+- Left-associative: Operations are performed from left to right.
+- Right-associative: Operations are performed from right to left.
+
+
+
+
+
+
+
