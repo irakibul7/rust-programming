@@ -86,7 +86,8 @@ The named arguments specify the name of the value in the string.
 
 ```rust
 let name = "Rustacean";
-let age = 25;println!("{name} is {age} years old."); // Rustacean is 25 years old.
+let age = 25;
+println!("{name} is {age} years old."); // Rustacean is 25 years old.
 ```
 
 ## Placeholder Traits
