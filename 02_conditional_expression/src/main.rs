@@ -3,6 +3,18 @@ fn main() {
     println!("🦀 Welcome to Conditional Expressions! 🦀");
     println!("================================================\n");
 
+    println!("🔍 if Expression");
+    println!("================================================\n");
+    
+    let language = "Rust";
+
+    if language == "Rust" {
+        println!("You are learning Rust");
+    } else {
+        println!("You are learning some others language!");
+    }
+
+    println!("================================================\n");
     println!("🔍 if let Expression");
     println!("================================================\n");
     
